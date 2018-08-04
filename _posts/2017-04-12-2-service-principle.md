@@ -1,18 +1,23 @@
 ---
 layout: post
-title: "Azure DevOps: #2 What is a Service Principle?"
+title: "What is a Service Principle?"
 date: 2017-04-12
 category: security
 
 ---
-When we setup the release to Azure we needed to setup a Service endpoint which in turn setup a Service Principle.
+In order for us our project within VSTS to perform actions on our Azure Subscription we need to create a Service endpoint which in turn sets up a Service Principal.
 
-As per the official documentation:
-{% highlight css %}
+There are 3 terms in play here which you should be aware of:
 
-When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a service principal.
-{% endhighlight %}
+1. A Service Endpoint.  This is the configuration within VSTS which points to your Service Principal.  It is also know as a Service connection.
+2. An Application Registration.  This is the configuration within Azure which is creates an identity which can be given permissions.
+3. A Service Principal.  This is what the identity created by the Application Registration is known as.
 
+In summary, to set this up we have 2 areas which hold configuration.
+
+The the official documentation describes a Service Principal as:
+
+>When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a Service Principal.
 
 *This approach enables you to:*
 
@@ -20,9 +25,9 @@ When you have an app or script that needs to access resources, you can set up an
 
 *-Use a certificate for authentication when executing an unattended script.*
 
-In summary, a Service Principle is an "Account" which you assign certain access to.  In our case we gave this Service Principle access to the Resource Group that we created.
+In summary, a Service Principal is an "Account" which you assign certain access to.  In our case we can give this Service Principal access to the Resource Group that will hold our resources.
 
-## Find the Service Principle Name
+## To find your Service Principal from VSTS
 - Under your project go to Project Settings/Service endpoints.
 
 ![](/images/Service-Principle-01.png)
@@ -33,8 +38,25 @@ In summary, a Service Principle is an "Account" which you assign certain access 
 
 You will notice that it has a very ugly auto-generated name.  My recommendation is to rename it to something meaningful and unique.
 
-I am renaming mine to VisualStudio-Service-Principle.
+I am renaming mine to VisualStudio-Service-Principal.
 
-If you go to the Resource Group that you created you will find this Service Principle under Access control(IAM)
+If you go to the Resource Group that you created you will find this Service Principal under Access control(IAM)
 
 ![](/images/See-Service-Principle-01-01.png)
+
+## To create a Service Principal from VSTS
+1. Go to your Project Settings on the bottom left hand side.
+2. Select Service Endpoints.
+![](/images/Add-Service-Principal-01.png)
+3. Select Azure Resource Manager.
+4. Follow the Azure authentication process and select your Resource Group.
+
+## See what adding a new VSTS Service Endpoint does
+
+If you navigate to your Resource Group and select Access control(IAM) you will see the Service Principal.  Note that in my example I have renamed the Service Principal to something meaningful.
+
+![](/images/Add-Service-Principal-02.png)
+
+
+
+
