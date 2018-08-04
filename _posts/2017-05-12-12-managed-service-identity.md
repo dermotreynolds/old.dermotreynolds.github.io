@@ -55,7 +55,7 @@ You can enable MSI via terraform:
     }
 
 
-We can then use the service principle to define a policy against keyvault: 
+We can then use the service principle to create a policy against keyvault:
 
     resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
         vault_name          = "<key vault name>"
