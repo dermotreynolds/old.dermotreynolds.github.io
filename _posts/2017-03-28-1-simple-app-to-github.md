@@ -8,13 +8,11 @@ share: false
 
 ---
 
-The purpose of this article is to get a simple application deployed to GitHub.
+The purpose of this article is to get a simple application deployed to GitHub which we can reuse in our CI/CD pipeline.
 
 We will use Visual Studio to create a blank application which we will add a simple HTML page to and then deploy it to GitHub.
 
 It may seem a bit trivial, but this is the same mechanism that you would use for creating the majority of the applications which can be hosted on Azure.
-
-We will reuse this GitHub repository later when setting up our CI/CD pipline.
 
 It should highlight how easy it is to create small applications using Visual Studio.
 
