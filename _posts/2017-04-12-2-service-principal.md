@@ -17,7 +17,7 @@ In summary, to set this up we have 2 areas which hold configuration.
 
 The the official documentation describes a Service Principal as:
 
->When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a Service Principal.
+: When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a Service Principal.
 
 This approach enables us to:
 
