@@ -22,17 +22,16 @@ You can assign an MSI to a range of resources.  At the time of writing these wer
 - Azure Event Hubs
 - Azure API Management
 
-Within VM this can be enabled by:
+Within VM you can enable this feature by selecting Configuration and selecting "Yes":
 
 ![](/images/Enable-VM-MSI-01.png)
 
-
 You can see it what is created by via Powershell:
+
 {% highlight yaml %}
-> Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1                                                                                                
-
-
-ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff, https://identity.azure.net/adf90adfadfderfdbxfsgfsgs=}
+Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1
+ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff,
+https://identity.azure.net/adf90adfadfde=}
 ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
 DisplayName           : vstsagentvm1
 Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
