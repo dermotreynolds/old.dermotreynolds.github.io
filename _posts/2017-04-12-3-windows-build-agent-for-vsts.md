@@ -6,7 +6,7 @@ category: CI/CD
 tags: [azure, Visual Studio Team Services, v1]
 
 ---
-A dedicated VSTS build agent will make you build and deployments more predictable.
+A build agent runs your configured build and release tasks.
 
 When you sign up for Visual Studio Team Services you are allocated a given amount of build/release hours for free.  After this you will have to either buy more or create your own Build Agent.
 
