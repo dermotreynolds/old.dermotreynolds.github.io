@@ -3,10 +3,13 @@ layout: post
 title: "Creating a Visual Studio Team Services Build Agent"
 date: 2017-04-13
 category: CI/CD
+tags: [azure, Visual Studio Team Services, v1]
 
 ---
+A dedicated VSTS build agent will make you build and deployments more predictable.
 
 When you sign up for Visual Studio Team Services you are allocated a given amount of build/release hours for free.  After this you will have to either buy more or create your own Build Agent.
+
 
 - Select Windows based Build Agent for VSTS from the Azure Marketplace
 ![](/images/New-Windows-Build-Agent-01-01.png)

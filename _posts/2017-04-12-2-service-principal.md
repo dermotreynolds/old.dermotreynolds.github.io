@@ -3,6 +3,7 @@ layout: post
 title: "What is a Service Principal?"
 date: 2017-04-12
 category: security
+tags: [azure, security, Visual Studio Team Services, Service Principal, v1]
 
 ---
 In order for our project within VSTS to perform actions on our Azure Subscription we need to create a Service endpoint which in turn sets up a Service Principal.
