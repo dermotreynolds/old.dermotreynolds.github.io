@@ -30,7 +30,7 @@ In summary, a Service Principal is an "Account" which you assign certain access 
 ## To find your Service Principal from VSTS
 - Under your project go to Project Settings/Service endpoints.
 
-![](/images/Service-Principle-01.png =25x)
+![](/images/Service-Principle-01.png)
 
 - Selecting Manage Service Principal will take you to the definition in Azure.
 
