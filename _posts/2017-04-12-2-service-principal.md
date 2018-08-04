@@ -42,7 +42,7 @@ I am renaming mine to VisualStudio-Service-Principal.
 
 If you go to the Resource Group that you created you will find this Service Principal under Access control(IAM)
 
-![](/images/See-Service-Principle-01-01.png)
+![](/images/Add-Service-Principal-02.png)
 
 ## To create a Service Principal from VSTS
 1. Go to your Project Settings on the bottom left hand side.
@@ -50,12 +50,6 @@ If you go to the Resource Group that you created you will find this Service Prin
 ![](/images/Add-Service-Principal-01.png)
 3. Select Azure Resource Manager.
 4. Follow the Azure authentication process and select your Resource Group.
-
-## See what adding a new VSTS Service Endpoint does
-
-If you navigate to your Resource Group and select Access control(IAM) you will see the Service Principal.  Note that in my example I have renamed the Service Principal to something meaningful.
-
-![](/images/Add-Service-Principal-02.png)
 
 
 
