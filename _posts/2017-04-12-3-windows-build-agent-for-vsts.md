@@ -69,8 +69,6 @@ To resolve this install Visual Studio Community on the host.
 
 - You can see what capabilities are installed on the build agent by going to the Capabilities link to the right hand side of the agent.
 
-![](/images/New-Windows-Build-Agent-08.png)
+![](/images/New-Windows-Build-Agent-07.png)
 
 - Rerun the build against the new agent
-
-![](/images/New-Windows-Build-Agent-08.png)
