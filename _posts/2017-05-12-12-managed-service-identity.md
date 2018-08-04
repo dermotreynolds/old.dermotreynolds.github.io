@@ -22,7 +22,8 @@ You can assign an MSI to a range of resources.  At the time of writing these wer
 - Azure Event Hubs
 - Azure API Management
 
-This can be enabled by 
+Within VM this can be enabled by:
+
 ![](/images/Enable-VM-MSI-01.png)
 
 
@@ -31,7 +32,7 @@ You can see it what is created by via Powershell:
 > Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1                                                                                                
 
 
-ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff, https://identity.azure.net/adf90adfadfderfdbxfsgfsgsgsgrtw452252554245=}
+ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff, https://identity.azure.net/adf90adfadfderfdbxfsgfsgs=}
 ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
 DisplayName           : vstsagentvm1
 Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
@@ -40,9 +41,10 @@ Type                  : ServicePrincipal
 {% endhighlight %}
 
 You can now use IAM to give permissions to the MSI to resources:
+
 ![](/images/Enable-VM-MSI-02.png)
 
-Enabling MSI via terraform is very straight forward:
+You can enable MSI via terraform:
 
     resource "azurerm_function_app" "wfbill_function_app" {
         ...
