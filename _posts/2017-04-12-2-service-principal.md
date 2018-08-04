@@ -19,18 +19,18 @@ The the official documentation describes a Service Principal as:
 
 >When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a Service Principal.
 
-*This approach enables you to:*
+This approach enables us to:
 
-*-Assign permissions to the app identity that are different than your own permissions. Typically, these permissions are restricted to exactly what the app needs to do.*
+- Assign permissions to the app identity that are different than your own permissions. Typically, these permissions are restricted to exactly what the app needs to do.
 
-*-Use a certificate for authentication when executing an unattended script.*
+- Use a certificate for authentication when executing an unattended script.*
 
 In summary, a Service Principal is an "Account" which you assign certain access to.  In our case we can give this Service Principal access to the Resource Group that will hold our resources.
 
 ## To find your Service Principal from VSTS
 - Under your project go to Project Settings/Service endpoints.
 
-![](/images/Service-Principle-01.png)
+![](/images/Service-Principle-01.png =25x)
 
 - Selecting Manage Service Principal will take you to the definition in Azure.
 
