@@ -2,12 +2,12 @@
 layout: page
 permalink: /about/index.html
 title: Dermot Reynolds
-tags: [Hossain, Mohd, Faysal, hmfaysal]
+tags: [Dermot, Reynolds, Cloud, Transformation]
 imagefeature: fourseasons.jpg
 chart: true
 ---
 <figure>
-  <img src="{{ site.url }}/images/DR.png" alt="Hossain Mohammad Faysal">
+  <img src="{{ site.url }}/images/DR.png" alt="Dermot Reynolds">
   <figcaption>Dermot Reynolds</figcaption>
 </figure>
 
