@@ -14,7 +14,7 @@ It also swaps the deployment slot to make the app live.
 
 One of the great things about Azure is that Powershell can do pretty much anything...and it runs on Mac!
 
-{% highlight yaml %}
+~~~~~~
 # Replace the following URL with a public GitHub repo URL
 $gitrepo="https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git"
 $webappname="mywebapp$(Get-Random)"
@@ -53,4 +53,4 @@ Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName $rgname
 # Swap the verified/warmed up staging slot into production.
 Switch-AzureRmWebAppSlot -Name $webappname -ResourceGroupName $rgname `
 -SourceSlotName staging -DestinationSlotName production
-{% endhighlight %}
+~~~~~~
