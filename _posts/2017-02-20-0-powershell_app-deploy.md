@@ -4,12 +4,12 @@ title: "Deploying to App Services Deployment Slot with Powershell"
 date: 2017-02-20
 featured: true
 category: powershell
-tags: [powershell]
+tags: [azure, powershell, v1]
 
 ---
 You can set up Continuous Deployment by connecting an App Service directly to a source code repository.
 
-Below is a Powershell script that spins up an App Service environment and connects it to a Git Repository.
+Below is a Powershell script that spins up an App Service and connects it to a Git Repository.
 
 It also swaps the deployment slot to make the app live.
 
