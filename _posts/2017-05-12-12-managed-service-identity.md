@@ -1,14 +1,46 @@
 ---
 layout: post
-title: "Azure DevOps: #12 Application Identity / Managed Service Identity"
+title: "What is a Managed Service Identity?"
 date: 2017-05-18
 category: security
 
 ---
+A Managed Service Identity creates an automatically managed identity in Azure AD.
 
-Taken from documentation: *The feature provides Azure services with an automatically managed identity in Azure AD.*
+This identity can then be used to provide access to resources.
 
 For example we can create an MSI for a VM and give that VM access to a SQL database.  We can then restrict access by only assigning the roles necessary for the application to function.
+
+You can assign an MSI to a range of resources.  At the time of writing these were:
+
+- Azure Data Lake
+- Azure SQL
+- Virtual machines - Linux & Windows
+- Azure App Service
+- Azure Functions
+- Azure Service Bus
+- Azure Event Hubs
+- Azure API Management
+
+This can be enabled by 
+![](/images/Enable-VM-MSI-01.png)
+
+
+You can see it what is created by via Powershell:
+{% highlight yaml %}
+> Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1                                                                                                
+
+
+ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff, https://identity.azure.net/adf90adfadfderfdbxfsgfsgsgsgrtw452252554245=}
+ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
+DisplayName           : vstsagentvm1
+Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
+Type                  : ServicePrincipal
+
+{% endhighlight %}
+
+You can now use IAM to give permissions to the MSI to resources:
+![](/images/Enable-VM-MSI-02.png)
 
 Enabling MSI via terraform is very straight forward:
 
