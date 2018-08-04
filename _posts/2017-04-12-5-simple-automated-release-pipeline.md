@@ -1,20 +1,16 @@
 ---
 layout: post
-title: "Azure DevOps: #5 Create a basic automated release Pipeline"
+title: "Create Visual Studio Team Services automated release Pipeline"
 date: 2017-04-24
 category: CI/CD
 
 ---
+This article is a walk through of setting up a Release Pipeline using Visual Studio Team Services.
 
-The purpose of this series is to walk through how to create a CI/CD pipeline using:
-- Visual Studio
-- Visual Studio Team Services
-- Azure
-- Terraform
 
-This uses the release that created during *Create a basic automated build Pipeline* article.
+This uses the release that created during *Create Visual Studio Team Services automated build Pipeline* article.
 
-## Create a new project in Visual Studio Team Services
+## Create a new release under your Visual Studio Team Services project
 
 - Create a new Release Pipeline.
 

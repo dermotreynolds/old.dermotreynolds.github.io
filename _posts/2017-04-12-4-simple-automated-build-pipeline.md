@@ -1,18 +1,15 @@
 ---
 layout: post
-title: "Azure DevOps: #4 Create a basic automated build Pipeline"
+title: "Create Visual Studio Team Services automated build Pipeline"
 date: 2017-04-16
 category: CI/CD
 
 ---
+This article is a walk through of setting up a Build Pipeline using Visual Studio Team Services.
 
-The purpose of this series is to walk through how to create a CI/CD pipeline using:
-- Visual Studio
-- Visual Studio Team Services
-- Azure
-- Terraform
+We will build on this in our Release Pipeline.
 
-This uses the app that was published to GitHub as part of the Publish A Very Basic App To GitHub article.
+This uses the app that was published to GitHub as part of the "Getting Started" article.
 
 ## Create a new project in Visual Studio Team Services
 
@@ -24,7 +21,9 @@ This uses the app that was published to GitHub as part of the Publish A Very Bas
 
 <img src="/images/Setup-VSTS-Build-02-01.png" alt="drawing" width="400px"/>
 
-- Create a new build pipeline.
+## Create a new Build Pipeline
+
+- Create a new build definition.
 
 <img src="/images/Setup-VSTS-Build-03-01.png" alt="drawing" width="400px"/>
 
@@ -49,6 +48,8 @@ Note: If this is the first time that you have setup Visual Studio Team Services 
 This will trigger a build each time you update your GitHub repository.
 
 <img src="/images/Setup-VSTS-Build-08-01.png" alt="drawing" width="400px"/>
+
+## Let's test it
 
 - Now that we have set it up, lets create a build.
 
