@@ -9,9 +9,9 @@ In order for our project within VSTS to perform actions on our Azure Subscriptio
 
 There are 3 terms in play here which you should be aware of:
 
-1. A Service Endpoint.  This is the configuration within VSTS which points to your Service Principal.  It is also know as a Service connection.
-2. An Application Registration.  This is the configuration within Azure which is creates an identity which can be given permissions.
-3. A Service Principal.  This is what the identity created by the Application Registration is known as.
+1. **A Service Endpoint.**  This is the configuration within VSTS which points to your Service Principal.  It is also know as a Service connection.
+2. **An Application Registration.**  This is the configuration within Azure which is creates an identity which can be given permissions.
+3. **A Service Principal.**  This is what the identity created by the Application Registration is known as.
 
 In summary, to set this up we have 2 areas which hold configuration.
 
