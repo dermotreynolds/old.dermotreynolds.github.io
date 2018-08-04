@@ -9,7 +9,7 @@ When we setup the release to Azure we needed to setup a Service endpoint which i
 
 As per the official documentation:
 
->When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a service principal.
+>>When you have an app or script that needs to access resources, you can set up an identity for the app and authenticate the app with its own credentials. This identity is known as a service principal.
 
 *This approach enables you to:*
 
