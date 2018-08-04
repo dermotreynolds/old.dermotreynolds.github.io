@@ -1,14 +1,18 @@
 ---
 layout: post
-title: "Azure DevOps: #8 Terraform deployment via VSTS."
+title: "Terraform deployment via Visual Studio Team Services."
 date: 2017-05-03
 category: terraform
+tags: [azure, terraform, CI/CD, v1]
 
 ---
+Infrastructure can be automatically deployed in the same way as code.
+
+This article follows on from the *Command Line* deployment article.  We will reuse the same terraform file.
 
 When we run terraform from VSTS we need to ensure that we maintain the state file - and its backup - in a central location.
 
-terraform supports storing state in blob storage.
+Luckily, terraform supports storing state in blob storage.
 
 - To enable state to be persisted to blob we need to add a provider block to main file
 
