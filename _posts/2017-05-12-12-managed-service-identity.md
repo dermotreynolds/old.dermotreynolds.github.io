@@ -28,17 +28,16 @@ Within VM you can enable this feature by selecting Configuration and selecting "
 
 You can see it what is created by via Powershell:
 
-{% highlight yaml %}
-Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1
 
-ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff,
-https://identity.azure.net/adf90adfadfde=}
-ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
-DisplayName           : vstsagentvm1
-Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
-Type                  : ServicePrincipal
+    Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1
 
-{% endhighlight %}
+    ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff,
+    https://identity.azure.net/adf90adfadfde=}
+    ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
+    DisplayName           : vstsagentvm1
+    Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
+    Type                  : ServicePrincipal
+
 
 You can now use IAM to give the MSI permissions to resources:
 
