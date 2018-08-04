@@ -30,6 +30,7 @@ You can see it what is created by via Powershell:
 
 {% highlight yaml %}
 Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1
+
 ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff,
 https://identity.azure.net/adf90adfadfde=}
 ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
@@ -39,7 +40,7 @@ Type                  : ServicePrincipal
 
 {% endhighlight %}
 
-You can now use IAM to give permissions to the MSI to resources:
+You can now use IAM to give the MSI permissions to resources:
 
 ![](/images/Enable-VM-MSI-02.png)
 
