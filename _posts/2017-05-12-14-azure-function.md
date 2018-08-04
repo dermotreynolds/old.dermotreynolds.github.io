@@ -5,15 +5,15 @@ date: 2017-05-25
 category: Azure Function
 
 ---
+Azure Functions allow you to create small single function applications which can flex independently of one aother.
 
-
-As per the documentation 
+As per the documentation:
 
 *Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure.*
 
-It allows you to develop small single purpose functions in virtually any language and for each to be triggered an a variety of different ways that to be scaled independently of one another.  For example, you may have a place order function which listens on a queue and when a message appears to perform the action.
+As mentioned, it allows you to develop small single purpose functions in virtually any language and for each to be triggered in a variety of different ways and that can be scaled independently of one another.  For example, you may have a place order function which listens on a queue and when a message appears to perform the PlaceOrder action.
 
-Under the hood a function is an App Service.  One of the advantages of functions is that you can pay on a pure consumption model.  There is no need to keep multiple servers running during quiet periods.
+Under the hood a function is an App Service.  One of the advantages of functions is that you can pay on a pure consumption model, therefore there is no need to keep multiple servers running during quiet periods.
 
 I have pasted a very simple HTTP Azure Function below which takes a JSON and stores the data in an Azure Table.  An Azure Function can be created within Visual Studio: New / Projects / Cloud / Azure Functions.  A similar deployment is shown in my Getting Started article.
 

@@ -1,17 +1,19 @@
 ---
 layout: post
-title: "Azure Security: #6 Adding Barracuda scan against Azure App Service"
+title: "Barracuda Vulnerability Scanning Of Azure App"
 date: 2017-04-28
 category: security
 
 ---
+In a CI/CD environment Vulnerability Scanning should be automated.
 
+Below is a very quick intro to Barracuda Vulnerability Manager.  As background, the application scanned was a single HTML "Hello World" page. 
 
 - Enabling Barracuda Vulnerability Manager
 
 ![](/images/New-Vulerability-Scan-01.png)
 
-- The report shows the vulnerabilities.  
+- The report shows the vulnerabilities found.  
 
 ![](/images/New-Vulerability-Scan-02.png)
 
