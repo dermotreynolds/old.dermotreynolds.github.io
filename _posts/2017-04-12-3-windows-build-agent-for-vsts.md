@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Azure DevOps: #3 Visual Studio Team Services Build Agent"
+title: "Creating a Visual Studio Team Services Build Agent"
 date: 2017-04-13
 category: CI/CD
 
