@@ -11,6 +11,7 @@ Preamble
 ##### 1. Persist our state to Azure Blob storage
 
 Lets write something here.
+
     init -backend-config="access_key=$(v_access_key)"
 
 ``` javascript
