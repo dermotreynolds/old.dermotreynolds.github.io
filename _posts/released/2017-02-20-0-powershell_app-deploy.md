@@ -25,7 +25,7 @@ $location="West Europe"
 $rgname="WeFinance"
 ```
 
-##### 2. Create a resource group.
+##### 2. Create a Resource Group.
 
 ``` javascript
 # Create a resource group.
