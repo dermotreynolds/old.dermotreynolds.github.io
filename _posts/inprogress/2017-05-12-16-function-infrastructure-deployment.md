@@ -8,9 +8,10 @@ tags: [Azure, Key Vault, Function App, Service Principle, CI/CD, v0.9]
 Preamble
 
 
-###### 1. Persist our state to Azure Blob storage
+##### 1. Persist our state to Azure Blob storage
 
 Lets write something here.
+    init -backend-config="access_key=$(v_access_key)"
 
 ``` javascript
 terraform {
