@@ -6,10 +6,11 @@ category: CI/CD
 tags: [Azure, Visual Studio Team Services, v1]
 
 ---
-A build agent runs your configured build and release tasks.
+A build agent runs your configured build and release tasks on your own hardware.
 
 When you sign up for Visual Studio Team Services you are allocated a given amount of build/release hours for free.  After this you will have to either buy more or create your own Build Agent.
 
+This article walks you through creating a dedicated build agent.
 
 - Select Windows based Build Agent for VSTS from the Azure Marketplace
 ![](/images/New-Windows-Build-Agent-01-01.png)
@@ -45,7 +46,7 @@ Testing agent connection.
 Enter work folder (press enter for _work) >
 2018-07-31 11:24:44Z: Settings Saved.
 Enter run agent as service? (Y/N) (press enter for N) > Y
-Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) >
+Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) >  NT AUTHORITY\SYSTEM
 {% endhighlight %}
 
 ![](/images/New-Windows-Build-Agent-04.png)

@@ -6,7 +6,7 @@ category: security
 tags: [Azure, Security, Visual Studio Team Services, Service Principal, v1]
 
 ---
-In order for our project within VSTS to perform actions on our Azure Subscription we need to create a Service endpoint which in turn sets up a Service Principal.
+In order for a project within VSTS to perform actions on an Azure Subscription we need to create a Service endpoint which in turn sets up a Service Principal.
 
 There are 3 terms in play here which you should be aware of:
 

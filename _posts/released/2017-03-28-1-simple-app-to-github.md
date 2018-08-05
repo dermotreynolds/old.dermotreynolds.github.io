@@ -7,10 +7,11 @@ featured: true
 tags: [Visual Studio,GitHub, v1]
 
 ---
+Visual Studio has a number of specific project templates for developing Azure services.  
 
-The purpose of this article is to get a simple application deployed to GitHub which we can reuse in our CI/CD pipeline.
+The purpose of this article is to get a simple application deployed to GitHub which you can reuse in our CI/CD pipeline.
 
-We will use Visual Studio to create a blank application which we will add a simple HTML page to and then deploy it to GitHub.
+We will use Visual Studio to create a blank application.  We will then add a simple HTML page and deploy it to GitHub.
 
 It may seem a bit trivial, but this is the same mechanism that you would use for creating the majority of the applications which can be hosted on Azure.
 

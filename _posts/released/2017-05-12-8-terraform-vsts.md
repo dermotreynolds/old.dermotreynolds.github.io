@@ -15,16 +15,17 @@ When we run terraform from VSTS we need to ensure that we maintain the state fil
 Luckily, terraform supports storing state in blob storage.
 
 - To enable state to be persisted to blob we need to add a provider block to main file
+~~~~~~
+main.tf
 
-        main.tf
-
-        terraform {
-           backend "azurerm" {
-             storage_account_name = "statefile01012"
-             container_name       = "statefile01012"
-             key                  = "prod.terraform.tfstate"
-           }
-        }
+terraform {
+    backend "azurerm" {
+      storage_account_name = "statefile01012"
+      container_name       = "statefile01012"
+      key                  = "prod.terraform.tfstate"
+    }
+}
+~~~~~~
 
 - We can then push this to github
 
