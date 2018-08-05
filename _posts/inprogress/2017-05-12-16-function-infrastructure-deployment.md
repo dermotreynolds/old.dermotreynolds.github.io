@@ -210,6 +210,6 @@ resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
   depends_on = ["azurerm_function_app.wfbill_function_app"]
 }
 ```
-You can automate this via [VSTS](/ci/cd/4-simple-automated-build-pipeline).
+You can automate this by following [Terraform deployment via Visual Studio Team Services](/terraform/8-terraform-vsts).
 
 You can also deploy the [Azure Function](/azure%20function/14-azure-function) to it.
