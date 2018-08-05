@@ -27,7 +27,7 @@ We can look at the function responding whilst issuing a Postman request.
 
 Here is the code for our Azure Function mentioned above: 
 
-~~~~~~
+``` C#
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -141,4 +141,4 @@ namespace WeFinance
         }
     }
 }
-~~~~~~
+```
