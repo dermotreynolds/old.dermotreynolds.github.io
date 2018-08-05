@@ -8,7 +8,7 @@ dropcap:          true
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 url:              https://www.dermotreynolds.com
-
+default_bg:       Cloud-Engineering-01.png
 # Owner/author information
 owner:
   name:           Dermot Reynolds
