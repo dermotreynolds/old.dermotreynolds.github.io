@@ -15,7 +15,7 @@ It also swaps the deployment slot to make the app live.
 
 One of the great things about Azure is that Powershell can do pretty much anything...and it runs on Mac!
 
-##### 1. Create some variables.  Set the URL to that of your app.
+##### 1. Create some variables.
 
 ``` javascript
 
@@ -32,7 +32,7 @@ $rgname="WeFinance"
 New-AzureRmResourceGroup -Name $rgname -Location $location
 ```
 
-#### 3. Create an App Service plan in Free tier.
+##### 3. Create an App Service plan in Free tier.
 
 ``` javascript
 
@@ -40,7 +40,7 @@ New-AzureRmAppServicePlan -Name $webappname -Location $location `
 -ResourceGroupName $rgname -Tier Free
 ```
 
-#### 4. Create a web app.
+##### 4. Create a web app.
 
 ``` javascript
 
@@ -48,14 +48,14 @@ New-AzureRmWebApp -Name $webappname -Location $location `
 -AppServicePlan $webappname -ResourceGroupName $rgname
 ```
 
-#### 5. Upgrade App Service plan to Standard tier (minimum required by deployment slots)
+##### 5. Upgrade App Service plan to Standard tier (minimum required by deployment slots)
 
 ``` javascript
 
 Set-AzureRmAppServicePlan -Name $webappname -ResourceGroupName $rgname `
 -Tier Standard
 ```
-#### 6. Create a deployment slot with the name "staging".
+##### 6. Create a deployment slot with the name "staging".
 
 ``` javascript
 
@@ -63,7 +63,7 @@ New-AzureRmWebAppSlot -Name $webappname -ResourceGroupName $rgname `
 -Slot staging -AppServicePlan $webappname
 ```
 
-#### 7. Configure GitHub deployment to the staging slot from your GitHub repo and deploy once.
+##### 7. Configure GitHub deployment to the staging slot from your GitHub repo and deploy once.
 
 ``` javascript
 
@@ -78,7 +78,7 @@ Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName $rgname
 -ResourceName $webappname/staging/web -ApiVersion 2015-08-01 -Force
 ```
 
-#### 8. Swap the verified/warmed up staging slot into production.
+##### 8. Swap the verified/warmed up staging slot into production.
 
 ``` javascript
 
