@@ -28,12 +28,14 @@ $rgname="WeFinance"
 ##### 2. Create a Resource Group.
 
 ``` javascript
+
 New-AzureRmResourceGroup -Name $rgname -Location $location
 ```
 
 #### 3. Create an App Service plan in Free tier.
 
 ``` javascript
+
 New-AzureRmAppServicePlan -Name $webappname -Location $location `
 -ResourceGroupName $rgname -Tier Free
 ```
@@ -41,6 +43,7 @@ New-AzureRmAppServicePlan -Name $webappname -Location $location `
 #### 4. Create a web app.
 
 ``` javascript
+
 New-AzureRmWebApp -Name $webappname -Location $location `
 -AppServicePlan $webappname -ResourceGroupName $rgname
 ```
@@ -48,12 +51,14 @@ New-AzureRmWebApp -Name $webappname -Location $location `
 #### 5. Upgrade App Service plan to Standard tier (minimum required by deployment slots)
 
 ``` javascript
+
 Set-AzureRmAppServicePlan -Name $webappname -ResourceGroupName $rgname `
 -Tier Standard
 ```
 #### 6. Create a deployment slot with the name "staging".
 
 ``` javascript
+
 New-AzureRmWebAppSlot -Name $webappname -ResourceGroupName $rgname `
 -Slot staging -AppServicePlan $webappname
 ```
@@ -61,6 +66,7 @@ New-AzureRmWebAppSlot -Name $webappname -ResourceGroupName $rgname `
 #### 7. Configure GitHub deployment to the staging slot from your GitHub repo and deploy once.
 
 ``` javascript
+
 $PropertiesObject = @{
     repoUrl = "$gitrepo";
     branch = "master";
@@ -75,6 +81,7 @@ Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName $rgname
 #### 8. Swap the verified/warmed up staging slot into production.
 
 ``` javascript
+
 Switch-AzureRmWebAppSlot -Name $webappname -ResourceGroupName $rgname `
 -SourceSlotName staging -DestinationSlotName production
 ```
