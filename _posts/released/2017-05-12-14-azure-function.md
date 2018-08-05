@@ -25,7 +25,7 @@ We can look at the function responding whilst issuing a Postman request.
 
 ![](/images/Azure-Function-02.png)
 
-Here is the code for our Azure Function mentioned above: 
+Here is the code for our Azure Function mentioned above:
 
 ``` C#
 using System.Net;
