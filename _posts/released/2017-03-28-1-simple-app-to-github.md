@@ -140,3 +140,6 @@ As a consistent naming convention we are going to call:
 - We can now see our files in GitHub
 
 <img src="/images/Add-Project-To-Git-08-01.png" alt="drawing" width="400px"/>
+
+
+<img src="/images/Cloud-Engineering-01.png" alt="drawing" width="400px"/>
