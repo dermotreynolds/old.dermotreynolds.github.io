@@ -26,7 +26,7 @@ chart: true
     {% endif %}
 {% endfor %}
 
-# Hi!
+**Hi!**
 
 My name is **Dermot Reynolds**, and this is my personal blog where I document some of the less well known or understood aspects of Cloud.
 
