@@ -8,7 +8,7 @@ tags: [Azure, Key Vault, Function App, Service Principle, CI/CD, v0.9]
 Preamble
 
 
-##### 1. Persist our state to Azure Blob storage
+###### 1. Persist our state to Azure Blob storage
 
 ``` javascript
 terraform {
@@ -22,15 +22,17 @@ terraform {
 
 ##### 2. Lets specify the version of the AzureRm Terraform module that we want to use
 
-~~~~~~
+``` javascript
+
 provider "azurerm" {
   version = "~> 1.11.0"
 }
-~~~~~~
+```
 
 ##### 3. Create a resource group to put all of our new services into
 
-~~~~~~
+``` javascript
+
 resource "azurerm_resource_group" "wfbill_resource_group" {
   name     = "${var.organisation}-${var.department}-${var.environment}-${var.project}"
   location = "${var.azure_location}"
@@ -41,11 +43,11 @@ resource "azurerm_resource_group" "wfbill_resource_group" {
     organisation = "${var.organisation}"
   }
 }
-~~~~~~
+```
 
 ##### 4. Create a Key Vault instance where we will store our secrets
 
-~~~~~~
+``` javascript
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "wfcore_key_vault" {
@@ -95,11 +97,11 @@ resource "azurerm_key_vault" "wfcore_key_vault" {
     name = "standard"
   }
 }
-~~~~~~
+```
 
 ##### 5. Create a storage account where our Function App will store its data
 
-~~~~~~
+``` javascript
 resource "azurerm_storage_account" "wfbill_storage_account" {
   name                     = "${var.organisation}${var.department}${var.environment}${var.project}"
   resource_group_name      = "${azurerm_resource_group.wfbill_resource_group.name}"
@@ -113,11 +115,11 @@ resource "azurerm_storage_account" "wfbill_storage_account" {
     organisation = "${var.organisation}"
   }
 }
-~~~~~~
+```
 
 ##### 5. Save our connection string to Key Vault
 
-~~~~~~
+``` javascript
 resource "azurerm_key_vault_secret" "wfbill_store_accesskey" {
   name      = "${var.organisation}${var.department}${var.environment}${var.project}-accesskey"
   value     = "${azurerm_storage_account.wfbill_storage_account.primary_connection_string}"
@@ -129,10 +131,10 @@ resource "azurerm_key_vault_secret" "wfbill_store_accesskey" {
     organisation = "${var.organisation}"
   }
 }
-~~~~~~
+```
 
 ##### 6. Create an App Service Plan
-~~~~~~
+``` javascript
 resource "azurerm_app_service_plan" "wfbill_app_service_plan" {
   name                = "${var.organisation}${var.department}${var.environment}${var.project}"
   location            = "${azurerm_resource_group.wfbill_resource_group.location}"
@@ -143,10 +145,10 @@ resource "azurerm_app_service_plan" "wfbill_app_service_plan" {
     size = "S1"
   }
 }
-~~~~~~
+```
 
 ##### 7. Create a Function App
-~~~~~~
+``` javascript
 resource "azurerm_function_app" "wfbill_function_app" {
   name                      = "${var.organisation}${var.department}${var.environment}${var.project}"
   location                  = "${azurerm_resource_group.wfbill_resource_group.location}"
@@ -162,11 +164,11 @@ resource "azurerm_function_app" "wfbill_function_app" {
     "KeyVaultLocation" = "${azurerm_key_vault.wfcore_key_vault.vault_uri}"
   }
 }
-~~~~~~
+```
 
 ##### 8. Give our new Function App access to Key Vault via Policy
 
-~~~~~~
+``` javascript
 data "azurerm_client_config" "wfbill_client_config" {}
 
 resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
@@ -191,7 +193,7 @@ resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
 
   depends_on = ["azurerm_function_app.wfbill_function_app"]
 }
-~~~~~~
+```
 
 ##### 9. 
 ~~~~~~
