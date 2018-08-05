@@ -10,7 +10,7 @@ Preamble
 
 ##### 1. Persist our state to Azure Blob storage
 
-~~~~~~
+``` json
 terraform {
   backend "azurerm" {
     storage_account_name = "wfinfraprd010105"
@@ -18,7 +18,7 @@ terraform {
     key                  = "terraform.polbill.state"
   }
 }
-~~~~~~
+```
 
 ##### 2. Lets specify the version of the AzureRm Terraform module that we want to use
 
