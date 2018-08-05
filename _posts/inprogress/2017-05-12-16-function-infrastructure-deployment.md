@@ -61,7 +61,6 @@ resource "azurerm_resource_group" "wfbill_resource_group" {
 ##### 4. Create a Key Vault instance where we will store our secrets
 
 In this instance we are going to put our Azure Storage connect string into a Key Vault.  Using Key Vault in this way ensures that:
-
 - There is no human intervention required to setup connectivity.
 - As there is no human intervention the risk of credentials being lost is minimised.
 
