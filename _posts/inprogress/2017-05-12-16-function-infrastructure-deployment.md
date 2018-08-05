@@ -10,6 +10,8 @@ Preamble
 
 ###### 1. Persist our state to Azure Blob storage
 
+Lets write something here.
+
 ``` javascript
 terraform {
   backend "azurerm" {
