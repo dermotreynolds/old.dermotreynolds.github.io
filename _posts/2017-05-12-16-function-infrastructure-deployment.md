@@ -7,11 +7,8 @@ tags: [Azure, Key Vault, Function App, Service Principle, CI/CD, v0.9]
 ---
 Preamble
 
-### Persist our state to Azure Blob storage
 
-#### 1 Persist our state to Azure Blob storage
-
-##### 4 Persist our state to Azure Blob storage
+##### 1. Persist our state to Azure Blob storage
 
 ~~~~~~
 #Persist our state to blob storage
@@ -22,6 +19,106 @@ terraform {
     key                  = "terraform.polbill.state"
   }
 }
+~~~~~~
+
+##### 2. Lets specify the version of the AzureRm Terraform module that we want to use
+
+~~~~~~
+provider "azurerm" {
+  version = "~> 1.11.0"
+}
+~~~~~~
+
+##### 3. Create a resource group to put all of our new services into
+
+~~~~~~
+resource "azurerm_resource_group" "wfbill_resource_group" {
+  name     = "${var.organisation}-${var.department}-${var.environment}-${var.project}"
+  location = "${var.azure_location}"
+
+  tags {
+    environment  = "${var.environment}"
+    department   = "${var.department}"
+    organisation = "${var.organisation}"
+  }
+}
+~~~~~~
+
+##### 4. Create a Key Vault instance where we will store our secrets
+
+~~~~~~
+data "azurerm_client_config" "current" {}
+
+resource "azurerm_key_vault" "wfcore_key_vault" {
+  name                = "${var.organisation}${var.department}${var.environment}-core"
+  location            = "${azurerm_resource_group.wfbill_resource_group.location}"
+  resource_group_name = "${azurerm_resource_group.wfbill_resource_group.name}"
+  tenant_id           = "${data.azurerm_client_config.current.tenant_id}"
+
+  access_policy {
+    tenant_id = "${data.azurerm_client_config.current.tenant_id}"
+    object_id = "${data.azurerm_client_config.current.service_principal_object_id}"
+
+    key_permissions = [
+      "create",
+      "get",
+      "list",
+      "backup",
+      "decrypt",
+      "delete",
+      "encrypt",
+      "get",
+      "import",
+      "list",
+      "purge",
+      "recover",
+      "restore",
+      "sign",
+      "unwrapKey",
+      "update",
+      "verify",
+      "wrapKey",
+    ]
+
+    secret_permissions = [
+      "backup",
+      "delete",
+      "get",
+      "list",
+      "purge",
+      "recover",
+      "set",
+      "restore",
+    ]
+  }
+
+  sku {
+    name = "standard"
+  }
+}
+~~~~~~
+
+##### 5. Create a storage account where our Function App will store its data
+
+~~~~~~
+resource "azurerm_storage_account" "wfbill_storage_account" {
+  name                     = "${var.organisation}${var.department}${var.environment}${var.project}"
+  resource_group_name      = "${azurerm_resource_group.wfbill_resource_group.name}"
+  location                 = "${azurerm_resource_group.wfbill_resource_group.location}"
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+
+  tags {
+    environment  = "${var.environment}"
+    department   = "${var.department}"
+    organisation = "${var.organisation}"
+  }
+}
+~~~~~~
+
+##### 5. aaa
+
+~~~~~~
 ~~~~~~
 
 We are going to start off with a very simple initial architecture which will:
@@ -137,87 +234,15 @@ In our case we are not going to use the Hardware Security Module version and ins
 
 
 
-provider "azurerm" {
-  version = "~> 1.11.0"
-}
 
-#Create a resource group to put our resources into
-resource "azurerm_resource_group" "wfbill_resource_group" {
-  name     = "${var.organisation}-${var.department}-${var.environment}-${var.project}"
-  location = "${var.azure_location}"
 
-  tags {
-    environment  = "${var.environment}"
-    department   = "${var.department}"
-    organisation = "${var.organisation}"
-  }
-}
 
-data "azurerm_client_config" "current" {}
 
-resource "azurerm_key_vault" "wfcore_key_vault" {
-  name                = "${var.organisation}${var.department}${var.environment}-core"
-  location            = "${azurerm_resource_group.wfbill_resource_group.location}"
-  resource_group_name = "${azurerm_resource_group.wfbill_resource_group.name}"
-  tenant_id           = "${data.azurerm_client_config.current.tenant_id}"
 
-  access_policy {
-    tenant_id = "${data.azurerm_client_config.current.tenant_id}"
-    object_id = "${data.azurerm_client_config.current.service_principal_object_id}"
-
-    key_permissions = [
-      "create",
-      "get",
-      "list",
-      "backup",
-      "decrypt",
-      "delete",
-      "encrypt",
-      "get",
-      "import",
-      "list",
-      "purge",
-      "recover",
-      "restore",
-      "sign",
-      "unwrapKey",
-      "update",
-      "verify",
-      "wrapKey",
-    ]
-
-    secret_permissions = [
-      "backup",
-      "delete",
-      "get",
-      "list",
-      "purge",
-      "recover",
-      "set",
-      "restore",
-    ]
-  }
-
-  sku {
-    name = "standard"
-  }
-}
 
 # #Create a local storage account for our application
 
-resource "azurerm_storage_account" "wfbill_storage_account" {
-  name                     = "${var.organisation}${var.department}${var.environment}${var.project}"
-  resource_group_name      = "${azurerm_resource_group.wfbill_resource_group.name}"
-  location                 = "${azurerm_resource_group.wfbill_resource_group.location}"
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
 
-  tags {
-    environment  = "${var.environment}"
-    department   = "${var.department}"
-    organisation = "${var.organisation}"
-  }
-}
 
 #Get a reference to the keyvault as we want to push the storage connection string to it
 # data "azurerm_key_vault" "wfcore_key_vault" {
