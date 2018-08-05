@@ -10,9 +10,7 @@ Preamble
 
 ##### 1. Persist our state to Azure Blob storage
 
-Lets write something here.
-
-    init -backend-config="access_key=$(v_access_key)"
+In order to persist our state to Azure Storage we need to include an AzureRm block.
 
 ``` javascript
 terraform {
@@ -24,7 +22,16 @@ terraform {
 }
 ```
 
+If you have been running from the command line then you can add the above block and then run the terraform init as follows 
+
+    terraform init -backend-config="access_key=<Azure Storage Key>)"
+
+This will put your state into the remote location.
+
+
 ##### 2. Lets specify the version of the AzureRm Terraform module that we want to use
+
+Given that terraform is an evolving project it is always a good idea to specify the AzureRm version that you are working with.  You can lock down the version as follows:
 
 ``` javascript
 
@@ -34,6 +41,8 @@ provider "azurerm" {
 ```
 
 ##### 3. Create a resource group to put all of our new services into
+
+It is good practice to put all the resources for a solution into the same resource group.  A resource group is simply a logical container but you can assign policies and security to it at a later date.
 
 ``` javascript
 
@@ -50,6 +59,11 @@ resource "azurerm_resource_group" "wfbill_resource_group" {
 ```
 
 ##### 4. Create a Key Vault instance where we will store our secrets
+
+In this instance we are going to put our Azure Storage connect string into a Key Vault.  Using Key Vault in this way ensures that:
+
+1. There is no human intervention required to setup connectivity.
+2. As there is no human intervention the risk of credentials being lost is minimised.
 
 ``` javascript
 data "azurerm_client_config" "current" {}
