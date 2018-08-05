@@ -28,7 +28,6 @@ $rgname="WeFinance"
 ##### 2. Create a Resource Group.
 
 ``` javascript
-# Create a resource group.
 New-AzureRmResourceGroup -Name $rgname -Location $location
 ```
 
