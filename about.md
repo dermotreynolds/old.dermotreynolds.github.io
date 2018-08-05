@@ -37,4 +37,5 @@ I am an Azure Certified Solutions Architect and would regard myself as an expert
 Hopefully, you will find some of this useful.
 
 Thanks
+
 Dermot
