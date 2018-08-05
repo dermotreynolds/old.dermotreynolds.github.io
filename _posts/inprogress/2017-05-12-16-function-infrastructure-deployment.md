@@ -5,7 +5,7 @@ date: 2017-05-28
 category: terraform
 tags: [Azure, Key Vault, Function App, Service Principle, CI/CD, v0.9]
 ---
-Preamble
+This article will walk you through setting up the infrastructure required for a Function App.
 
 
 ##### 1. Persist our state to Azure Blob storage
