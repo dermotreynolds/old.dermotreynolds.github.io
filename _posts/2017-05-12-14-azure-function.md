@@ -5,7 +5,7 @@ date: 2017-05-25
 category: Azure Function
 
 ---
-Azure Functions allow you to create small single function applications which can flex independently of one aother.
+Azure Functions allow you to create small single function applications which can flex independently of one another.
 
 As per the documentation:
 
@@ -25,7 +25,7 @@ We can look at the function responding whilst issuing a Postman request.
 
 ![](/images/Azure-Function-02.png)
 
-Here is the code for our Azure Function that I deployed: 
+Here is the code for our Azure Function mentioned above: 
 
 ~~~~~~
 using System.Net;
