@@ -62,8 +62,8 @@ resource "azurerm_resource_group" "wfbill_resource_group" {
 
 In this instance we are going to put our Azure Storage connect string into a Key Vault.  Using Key Vault in this way ensures that:
 
-1. There is no human intervention required to setup connectivity.
-2. As there is no human intervention the risk of credentials being lost is minimised.
+- There is no human intervention required to setup connectivity.
+- As there is no human intervention the risk of credentials being lost is minimised.
 
 ``` javascript
 data "azurerm_client_config" "current" {}
