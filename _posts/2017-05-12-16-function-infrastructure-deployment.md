@@ -8,6 +8,7 @@ tags: [Azure, Key Vault, Function App, Service Principle, CI/CD, v0.9]
 Preamble
 
 ###Persist our state to Azure Blob storage
+
 ####Persist our state to Azure Blob storage
 
 ~~~~~~
