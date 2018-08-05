@@ -11,6 +11,8 @@ Preamble
 
 #### 1 Persist our state to Azure Blob storage
 
+##### 4 Persist our state to Azure Blob storage
+
 ~~~~~~
 #Persist our state to blob storage
 terraform {
