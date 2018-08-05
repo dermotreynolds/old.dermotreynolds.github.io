@@ -1,10 +1,34 @@
 ---
 layout: post
-title: "Azure DevOps: #15 Putting it together Function Infrastructure Deployment"
+title: "Terraform/Key Vault/Function Infrastructure Deployment"
 date: 2017-05-28
 category: terraform
 tags: [Azure, Key Vault, Function App, Service Principle, CI/CD, v0.9]
 ---
+We are going to start off with a very simple initial architecture which will:
+
+1. Store secrets in Key Vault.
+
+2. Create an Function App.
+
+3. Use table storage for persisting data.
+
+As the infrastructure is being deployed:
+
+1. The Service Principle that is used for deploying the infrastructure is given access to Key Vault via an access policy.
+
+2. The connection string for the storage is persisted to the Key Vault instance.
+
+3. The Function App is given an Managed Service Identity - see specific article on this.
+
+4. The Function App is then given access to Key Vault - via an access policy.
+
+5. The Key Vault URI is set as a parameter in the Function App.
+
+The application can now, find the Key Vault, access the secret containing the connection string and then use this string to persist data.
+
+The plan is that I get more time I will add more features to the solution.
+
 The first thing that we need to do is to state where we are going to persist our state.
 
         #Persist our state to blob storage
