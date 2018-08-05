@@ -10,7 +10,7 @@ Preamble
 
 ##### 1. Persist our state to Azure Blob storage
 
-``` json
+``` javascript
 terraform {
   backend "azurerm" {
     storage_account_name = "wfinfraprd010105"
