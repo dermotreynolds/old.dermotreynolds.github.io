@@ -76,36 +76,10 @@ resource "azurerm_key_vault" "wfcore_key_vault" {
     tenant_id = "${data.azurerm_client_config.current.tenant_id}"
     object_id = "${data.azurerm_client_config.current.service_principal_object_id}"
 
-    key_permissions = [
-      "create",
-      "get",
-      "list",
-      "backup",
-      "decrypt",
-      "delete",
-      "encrypt",
-      "get",
-      "import",
-      "list",
-      "purge",
-      "recover",
-      "restore",
-      "sign",
-      "unwrapKey",
-      "update",
-      "verify",
-      "wrapKey",
-    ]
+    key_permissions = [ ]
 
     secret_permissions = [
-      "backup",
-      "delete",
-      "get",
-      "list",
-      "purge",
-      "recover",
       "set",
-      "restore",
     ]
   }
 
@@ -197,19 +171,13 @@ resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
   key_permissions = []
 
   secret_permissions = [
-    "backup",
-    "delete",
     "get",
-    "list",
-    "purge",
-    "recover",
-    "set",
-    "restore",
   ]
 
   depends_on = ["azurerm_function_app.wfbill_function_app"]
 }
 ```
+
 You can automate this by following [Terraform deployment via Visual Studio Team Services](/terraform/8-terraform-vsts).
 
 You can also deploy the [Azure Function](/azure%20function/14-azure-function) to it.
