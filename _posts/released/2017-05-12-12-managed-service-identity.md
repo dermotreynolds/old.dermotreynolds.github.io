@@ -28,16 +28,17 @@ Within VM you can enable this feature by selecting Configuration and selecting "
 
 You can see it what is created by via Powershell:
 
+``` javascript
 
-    Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1
+Get-AzureRmADServicePrincipal -DisplayName vstsagentvm1
 
-    ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff,
-    https://identity.azure.net/adf90adfadfde=}
-    ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
-    DisplayName           : vstsagentvm1
-    Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
-    Type                  : ServicePrincipal
-
+ServicePrincipalNames : {4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff,
+https://identity.azure.net/adf90adfadfde=}
+ApplicationId         : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
+DisplayName           : vstsagentvm1
+Id                    : 4d266yyy-XXXX-49b2-b637-Nfd0cNNNfff
+Type                  : ServicePrincipal
+```
 
 You can now use IAM to give the MSI permissions to resources:
 
@@ -45,27 +46,31 @@ You can now use IAM to give the MSI permissions to resources:
 
 You can enable MSI via terraform:
 
-    resource "azurerm_function_app" "wfbill_function_app" {
-        ...
+``` javascript
 
-        identity {
-            type = "SystemAssigned"
-        }
-        ...
+resource "azurerm_function_app" "wfbill_function_app" {
+    ...
+
+    identity {
+        type = "SystemAssigned"
     }
-
+    ...
+}
+```
 
 We can then use the service principle to create a policy against keyvault:
+``` javascript
 
-    resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
-        vault_name          = "<key vault name>"
-        resource_group_name = "<key vault resource group>"
-        tenant_id = "<your tenant id>"
-        object_id = "<the app service principle id>"
+resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
+    vault_name          = "<key vault name>"
+    resource_group_name = "<key vault resource group>"
+    tenant_id = "<your tenant id>"
+    object_id = "<the app service principle id>"
 
-        key_permissions = [<permissions>]
-        secret_permissions = [<permissions>]
+    key_permissions = [<permissions>]
+    secret_permissions = [<permissions>]
 
-    }
+}
+```
 
 Your app service can now access key vault.
