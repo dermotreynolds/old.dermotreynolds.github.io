@@ -11,7 +11,6 @@ Preamble
 ##### 1. Persist our state to Azure Blob storage
 
 ~~~~~~
-#Persist our state to blob storage
 terraform {
   backend "azurerm" {
     storage_account_name = "wfinfraprd010105"
@@ -116,10 +115,88 @@ resource "azurerm_storage_account" "wfbill_storage_account" {
 }
 ~~~~~~
 
-##### 5. aaa
+##### 5. Save our connection string to Key Vault
 
 ~~~~~~
+resource "azurerm_key_vault_secret" "wfbill_store_accesskey" {
+  name      = "${var.organisation}${var.department}${var.environment}${var.project}-accesskey"
+  value     = "${azurerm_storage_account.wfbill_storage_account.primary_connection_string}"
+  vault_uri = "${azurerm_key_vault.wfcore_key_vault.vault_uri}"
+
+  tags {
+    environment  = "${var.environment}"
+    department   = "${var.department}"
+    organisation = "${var.organisation}"
+  }
+}
 ~~~~~~
+
+##### 6. Create an App Service Plan
+~~~~~~
+resource "azurerm_app_service_plan" "wfbill_app_service_plan" {
+  name                = "${var.organisation}${var.department}${var.environment}${var.project}"
+  location            = "${azurerm_resource_group.wfbill_resource_group.location}"
+  resource_group_name = "${azurerm_resource_group.wfbill_resource_group.name}"
+
+  sku {
+    tier = "Standard"
+    size = "S1"
+  }
+}
+~~~~~~
+
+##### 7. Create a Function App
+~~~~~~
+resource "azurerm_function_app" "wfbill_function_app" {
+  name                      = "${var.organisation}${var.department}${var.environment}${var.project}"
+  location                  = "${azurerm_resource_group.wfbill_resource_group.location}"
+  resource_group_name       = "${azurerm_resource_group.wfbill_resource_group.name}"
+  app_service_plan_id       = "${azurerm_app_service_plan.wfbill_app_service_plan.id}"
+  storage_connection_string = "${azurerm_storage_account.wfbill_storage_account.primary_connection_string}"
+
+  identity {
+    type = "SystemAssigned"
+  }
+
+  app_settings {
+    "KeyVaultLocation" = "${azurerm_key_vault.wfcore_key_vault.vault_uri}"
+  }
+}
+~~~~~~
+
+##### 8. Give our new Function App access to Key Vault via Policy
+
+~~~~~~
+data "azurerm_client_config" "wfbill_client_config" {}
+
+resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
+  vault_name          = "${azurerm_key_vault.wfcore_key_vault.name}"
+  resource_group_name = "${azurerm_key_vault.wfcore_key_vault.resource_group_name}"
+
+  tenant_id = "${data.azurerm_client_config.wfbill_client_config.tenant_id}"
+  object_id = "${azurerm_function_app.wfbill_function_app.identity.0.principal_id}"
+
+  key_permissions = []
+
+  secret_permissions = [
+    "backup",
+    "delete",
+    "get",
+    "list",
+    "purge",
+    "recover",
+    "set",
+    "restore",
+  ]
+
+  depends_on = ["azurerm_function_app.wfbill_function_app"]
+}
+~~~~~~
+
+##### 9. 
+~~~~~~
+~~~~~~
+
 
 We are going to start off with a very simple initial architecture which will:
 
@@ -251,70 +328,12 @@ In our case we are not going to use the Hardware Security Module version and ins
 # }
 
 #Save the storage connection string to the key vault
-resource "azurerm_key_vault_secret" "wfbill_store_accesskey" {
-  name      = "${var.organisation}${var.department}${var.environment}${var.project}-accesskey"
-  value     = "${azurerm_storage_account.wfbill_storage_account.primary_connection_string}"
-  vault_uri = "${azurerm_key_vault.wfcore_key_vault.vault_uri}"
 
-  tags {
-    environment  = "${var.environment}"
-    department   = "${var.department}"
-    organisation = "${var.organisation}"
-  }
-}
 
 # #Ceate an app service plan
-resource "azurerm_app_service_plan" "wfbill_app_service_plan" {
-  name                = "${var.organisation}${var.department}${var.environment}${var.project}"
-  location            = "${azurerm_resource_group.wfbill_resource_group.location}"
-  resource_group_name = "${azurerm_resource_group.wfbill_resource_group.name}"
 
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
-}
 
 # #Create a function app which is registered with Azure AD
-resource "azurerm_function_app" "wfbill_function_app" {
-  name                      = "${var.organisation}${var.department}${var.environment}${var.project}"
-  location                  = "${azurerm_resource_group.wfbill_resource_group.location}"
-  resource_group_name       = "${azurerm_resource_group.wfbill_resource_group.name}"
-  app_service_plan_id       = "${azurerm_app_service_plan.wfbill_app_service_plan.id}"
-  storage_connection_string = "${azurerm_storage_account.wfbill_storage_account.primary_connection_string}"
 
-  identity {
-    type = "SystemAssigned"
-  }
-
-  app_settings {
-    "KeyVaultLocation" = "${azurerm_key_vault.wfcore_key_vault.vault_uri}"
-  }
-}
 
 # #Get a handle to the current client, so that we can get the tenant_id
-data "azurerm_client_config" "wfbill_client_config" {}
-
-#Give the new function app access to key vault
-resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
-  vault_name          = "${azurerm_key_vault.wfcore_key_vault.name}"
-  resource_group_name = "${azurerm_key_vault.wfcore_key_vault.resource_group_name}"
-
-  tenant_id = "${data.azurerm_client_config.wfbill_client_config.tenant_id}"
-  object_id = "${azurerm_function_app.wfbill_function_app.identity.0.principal_id}"
-
-  key_permissions = []
-
-  secret_permissions = [
-    "backup",
-    "delete",
-    "get",
-    "list",
-    "purge",
-    "recover",
-    "set",
-    "restore",
-  ]
-
-  depends_on = ["azurerm_function_app.wfbill_function_app"]
-}
