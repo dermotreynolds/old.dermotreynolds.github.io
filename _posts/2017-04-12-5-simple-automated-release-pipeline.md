@@ -3,7 +3,7 @@ layout: post
 title: "Create Visual Studio Team Services automated release Pipeline"
 date: 2017-04-24
 category: CI/CD
-tags: [azure, Visual Studio Team Services, CI/CD, v1]
+tags: [Azure, Visual Studio Team Services, CI/CD, v1]
 
 ---
 This article is a walk through of setting up a Release Pipeline using Visual Studio Team Services.

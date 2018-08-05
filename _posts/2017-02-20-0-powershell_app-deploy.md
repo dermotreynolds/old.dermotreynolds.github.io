@@ -4,7 +4,7 @@ title: "Deploying to App Services Deployment Slot with Powershell"
 date: 2017-02-20
 featured: true
 category: powershell
-tags: [azure, powershell,App Service, v1]
+tags: [Azure, Powershell,App Service, v1]
 
 ---
 You can set up Continuous Deployment by connecting an App Service directly to a source code repository.

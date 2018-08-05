@@ -3,7 +3,7 @@ layout: post
 title: "What is a Managed Service Identity?"
 date: 2017-05-18
 category: security
-
+tags: [Azure, Managed Service Identity, Security, v1]
 ---
 A Managed Service Identity creates an automatically managed identity in Azure AD.
 

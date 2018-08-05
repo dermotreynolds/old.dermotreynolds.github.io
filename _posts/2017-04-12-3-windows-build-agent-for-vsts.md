@@ -3,7 +3,7 @@ layout: post
 title: "Creating a Visual Studio Team Services Build Agent"
 date: 2017-04-13
 category: CI/CD
-tags: [azure, Visual Studio Team Services, v1]
+tags: [Azure, Visual Studio Team Services, v1]
 
 ---
 A build agent runs your configured build and release tasks.

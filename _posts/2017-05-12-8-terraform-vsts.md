@@ -3,7 +3,7 @@ layout: post
 title: "Terraform deployment via Visual Studio Team Services."
 date: 2017-05-03
 category: terraform
-tags: [azure, terraform, CI/CD, v1]
+tags: [Azure, Terraform, CI/CD, v1]
 
 ---
 Infrastructure can be automatically deployed in the same way as code.

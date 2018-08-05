@@ -3,15 +3,15 @@ layout: post
 title: "Azure Table Storage"
 date: 2017-05-22
 category: Azure Storage
-tags: [azure, C#, Table Storage, v1]
+tags: [Azure, C#, Table Storage, v1]
 ---
-Table storage is a NoSQL key-value store that is very easy to use and has high throughput.
+Table storage is a NoSQL key-value store that is very easy to use and supports high throughput.
 
 The "Key" is made up of the PartitionKey and RowKey and the "Value" is the associated attributes.
 
 It can support 20,000 operations/s or >10 million operations/s with Cosmos DB Table API.
 
-It is very limited in functionality in comparison to other database technologies.  As an example, tt does not support joins - or the vast majority of functionality that you will get in other database - so you will generally need to de-normalise your data in order to support efficient querying.
+It is very limited in functionality in comparison to other database technologies.  As an example, it does not support joins - or the vast majority of functionality that you will get in other database - so you will generally need to de-normalise your data in order to support efficient querying.
 
 To show you how easy it is to use, the code snippet below creates a table called products and inserts a simple product into it, setting the PartitionKey to "insuranceproduct" and the RowKey to the ProductName.
 

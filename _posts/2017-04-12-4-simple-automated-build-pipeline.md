@@ -3,7 +3,7 @@ layout: post
 title: "Create Visual Studio Team Services automated build Pipeline"
 date: 2017-04-16
 category: CI/CD
-tags: [azure, Visual Studio Team Services, CI/CD, v1]
+tags: [Azure, Visual Studio Team Services, CI/CD, v1]
 
 ---
 This article is a walk through of setting up a Build Pipeline using Visual Studio Team Services.

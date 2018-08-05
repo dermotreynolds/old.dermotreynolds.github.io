@@ -3,7 +3,7 @@ layout: post
 title: "Azure Functions"
 date: 2017-05-25
 category: Azure Function
-
+tags: [Azure, Function App, C#, v1]
 ---
 Azure Functions allow you to create small single function applications which can flex independently of one another.
 

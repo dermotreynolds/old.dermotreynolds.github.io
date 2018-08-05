@@ -3,7 +3,7 @@ layout: post
 title: "Terraform deployment via command line."
 date: 2017-05-01
 category: terraform
-tags: [azure, terraform, CI/CD, v1]
+tags: [Azure, Terraform, CI/CD, v1]
 
 ---
 The GUI should only be used for those functions that are not available via command line means.

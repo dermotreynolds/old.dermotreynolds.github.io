@@ -3,6 +3,7 @@ layout: post
 title: "Azure DevOps: #9 Dealing with dependencies"
 date: 2017-05-04
 category: terraform
+tags: [Azure, Terraform, CI/CD, v0.9]
 
 ---
 

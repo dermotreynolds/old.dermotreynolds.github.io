@@ -3,7 +3,7 @@ layout: post
 title: "Barracuda Vulnerability Scanning Of Azure App"
 date: 2017-04-28
 category: security
-tags: [azure, Barracuda, Security, v1]
+tags: [Azure, Barracuda, Security, v1]
 
 ---
 In a CI/CD environment Vulnerability Scanning should be automated.
