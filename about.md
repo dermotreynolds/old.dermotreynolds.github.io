@@ -27,10 +27,15 @@ chart: true
 {% endfor %}
 
 
+#Hi!
+
 My name is **Dermot Reynolds**, and this is my personal blog where I document some of the less well known or understood aspects of Cloud.
 
-I have over 25 years experience in IT from developer to Oracle DBA to Sysadmin to Architect to CTO.
+I have over 25 years experience in all aspects of IT.  I have been a developer, an Oracle DBA, a Sysadmin, a Solutions Architect and most recently a CTO.
 
-I am an Azure Certified Solutions Architect and would regard myself an expert in designing and implementing innovative solutions. 
+I am an Azure Certified Solutions Architect and would regard myself an expert in designing and implementing innovative Cloud solutions. 
 
-<img src="/images/Cloud-Engineering-01.png" alt="drawing" width="400px"/>
+Hopefully, you will find some of this useful.
+
+Thanks
+Dermot
