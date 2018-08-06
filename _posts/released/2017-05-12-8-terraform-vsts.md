@@ -43,7 +43,7 @@ For consistency lets push it to the GitHub repository TestWebTerraform.
 
 ![](/images/New-IaC-Release-03.png)
 
-- Lets use our Azure-Hosted-Agents for performing this build
+- Let's use our Azure-Hosted-Agents for performing this build
 
 ![](/images/New-IaC-Release-04.png)
 
@@ -81,7 +81,7 @@ init -backend-config="access_key=$(v_access_key)"
 
 - Lets give it a meaningful name - BuildWebInfra - and save it
 
-- Letw queue a new build
+- Let's queue a new build
 
 ![](/images/New-IaC-Release-10.png)
 
