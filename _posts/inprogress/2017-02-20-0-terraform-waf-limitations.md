@@ -2,7 +2,7 @@
 ---
 layout: post
 title: "Terraform Application Gateway Limitations"
-date: 2017-07-15
+date: 2018-07-15
 featured: true
 category: security
 tags: [Azure, Terraform, Application Gateway, v1]
