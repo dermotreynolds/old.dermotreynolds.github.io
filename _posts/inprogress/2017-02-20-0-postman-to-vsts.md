@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Execute Postman Collections in your CI pipeline"
-date: 2017-05-15
+date: 2018-05-15
 featured: true
 category: powershell
 tags: [Azure, Postman,Visual Studio Team Services, v1]
