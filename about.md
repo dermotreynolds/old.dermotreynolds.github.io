@@ -7,19 +7,7 @@ imagefeature: fourseasons.jpg
 chart: true
 ---
 <figure>
-  <!-- <img src="{{ site.url }}/images/DR.png" alt="Dermot Reynolds"> -->
-  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="90d49c21-335e-498f-9ac3-19208c1ae961"></div>
-  <script type="text/javascript">
-    (function() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = '//cdn.youracclaim.com/assets/utilities/embed.js';
-      var o = document.getElementsByTagName('script')[0];
-      o.parentNode.insertBefore(s, o);
-      })();
-  </script>
-
+  <img src="{{ site.url }}/images/DR.png" alt="Dermot Reynolds">
   <figcaption>Dermot Reynolds</figcaption>
 </figure>
 
