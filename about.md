@@ -7,7 +7,7 @@ imagefeature: fourseasons.jpg
 chart: true
 ---
 <figure>
-  <img src="{{ site.url }}/images/exam-535-architecting-microsoft-azure-solutions.png" alt="Dermot Reynolds">
+  <img src="{{ site.url }}/images/exam-535-architecting-microsoft-azure-solutions-small.png" alt="Dermot Reynolds">
   <figcaption>Dermot Reynolds</figcaption>
 </figure>
 
