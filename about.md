@@ -6,10 +6,7 @@ tags: [Dermot, Reynolds, Cloud, Transformation]
 imagefeature: fourseasons.jpg
 chart: true
 ---
-<figure>
-  <img src="{{ site.url }}/images/exam-535-architecting-microsoft-azure-solutions-small.png" alt="Dermot Reynolds">
-  <figcaption>Dermot Reynolds</figcaption>
-</figure>
+
 
 {% assign total_words = 0 %}
 {% assign total_readtime = 0 %}
@@ -39,3 +36,8 @@ Hopefully, you will find some of this useful.
 Thanks
 
 Dermot
+
+<figure>
+  <img src="{{ site.url }}/images/exam-535-architecting-microsoft-azure-solutions-small.png" alt="Dermot Reynolds">
+  <figcaption>Dermot Reynolds</figcaption>
+</figure>
