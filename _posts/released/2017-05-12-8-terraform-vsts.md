@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Terraform deployment via Visual Studio Team Services."
+title: "Terraform deployment via Visual Studio Team Services"
 date: 2017-05-03
 category: terraform
 tags: [Azure, Terraform, CI/CD, v1]
@@ -14,7 +14,8 @@ When we run terraform from VSTS we need to ensure that we maintain the state fil
 
 Luckily, terraform supports storing state in blob storage.
 
-- To enable state to be persisted to blob we need to add a provider block to main file
+- To enable state to be persisted to blob we need to add a provider block to main file.
+
 ~~~~~~
 main.tf
 
@@ -27,23 +28,23 @@ terraform {
 }
 ~~~~~~
 
-- We can then push this to github
+- We can then push this to github.
 
 For consistency lets push it to the GitHub repository TestWebTerraform.
 
-- Create a new Build
+- Create a new Build.
 
 ![](/images/New-IaC-Release-01.png)
 
-- Connect it to our GitHub repository
+- Connect it to our GitHub repository.
 
 ![](/images/New-IaC-Release-02.png)
 
-- Start with an empty process 
+- Start with an empty process.
 
 ![](/images/New-IaC-Release-03.png)
 
-- Let's use our Azure-Hosted-Agents for performing this build
+- Let's use our Azure-Hosted-Agents for performing this build.
 
 ![](/images/New-IaC-Release-04.png)
 
@@ -68,24 +69,25 @@ init -backend-config="access_key=$(v_access_key)"
 ![](/images/New-IaC-Release-07.png)
 
 
-
-- Create another task as our terraform plan
+- Create another task as our terraform plan.
 
 ![](/images/New-IaC-Release-08.png)
 
-- Create another task as our terraform apply
+- Create another task as our terraform apply.
 
-      apply  -auto-approve 
+~~~~~~
+apply  -auto-approve 
+~~~~~~
 
 ![](/images/New-IaC-Release-09.png)
 
-- Lets give it a meaningful name - BuildWebInfra - and save it
+- Lets give it a meaningful name - BuildWebInfra - and save it.
 
-- Let's queue a new build
+- Let's queue a new build.
 
 ![](/images/New-IaC-Release-10.png)
 
-- And look at the Logs
+- And look at the Logs.
 
 ![](/images/New-IaC-Release-11.png)
 
@@ -95,4 +97,4 @@ This is equivalent to the state file which was stored on our filesystem when we 
 
 ![](/images/New-IaC-Release-12.png)
 
--  Great, all done!
+- Great, all done!

@@ -11,7 +11,7 @@ The "Key" is made up of the PartitionKey and RowKey and the "Value" is the assoc
 
 It can support 20,000 operations/s or >10 million operations/s with Cosmos DB Table API.
 
-It is very limited in functionality in comparison to other database technologies.  As an example, it does not support joins - or the vast majority of functionality that you will get in other database - so you will generally need to de-normalise your data in order to support efficient querying.
+It is limited in functionality in comparison to other database technologies.  As an example, it does not support joins - or the vast majority of functionality that you will get in other databases - so you will generally need to de-normalise your data in order to support efficient querying.
 
 To show you how easy it is to use, the code snippet below creates a table called products and inserts a simple product into it, setting the PartitionKey to "insuranceproduct" and the RowKey to the ProductName.
 
@@ -46,4 +46,4 @@ If we pass a product into our function app we can see that it has created the ta
 
 ![](/images/Table-Storage-Products-01.png)
 
-The tool used for managing Azure Storage is __[Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)__.
+The tool used for managing Azure Storage is __[Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/){:target="_blank"}__.

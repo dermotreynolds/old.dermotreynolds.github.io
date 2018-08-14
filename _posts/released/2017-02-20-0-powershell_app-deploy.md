@@ -40,7 +40,7 @@ New-AzureRmAppServicePlan -Name $webappname -Location $location `
 -ResourceGroupName $rgname -Tier Free
 ```
 
-##### 4. Create a web app.
+##### 4. Create a Web App.
 
 ``` javascript
 
@@ -48,13 +48,14 @@ New-AzureRmWebApp -Name $webappname -Location $location `
 -AppServicePlan $webappname -ResourceGroupName $rgname
 ```
 
-##### 5. Upgrade App Service plan to Standard tier (minimum required by deployment slots)
+##### 5. Upgrade App Service plan to Standard tier (minimum required by deployment slots).
 
 ``` javascript
 
 Set-AzureRmAppServicePlan -Name $webappname -ResourceGroupName $rgname `
 -Tier Standard
 ```
+
 ##### 6. Create a deployment slot with the name "staging".
 
 ``` javascript

@@ -23,15 +23,15 @@ In order to work with Azure you will need the software and accounts below.  I wi
 
 Before we get started you need to install some software and create some accounts:
 - Install Visual Studio Community Edition
- __[Visual Studio](https://visualstudio.microsoft.com/vs/community/)__
+ __[Visual Studio](https://visualstudio.microsoft.com/vs/community/){:target="_blank"}__
 - Create a free account on Visual Studio Team Services
- __[VSTS](https://visualstudio.microsoft.com/team-services/)__
+ __[VSTS](https://visualstudio.microsoft.com/team-services/){:target="_blank"}__
 - Create a free account on Azure 
- __[Azure](https://azure.microsoft.com/en-us/)__
+ __[Azure](https://azure.microsoft.com/en-us/){:target="_blank"}__
 - Create a free account on GitHub
- __[GITHUB](https://github.com/)__
+ __[GITHUB](https://github.com/){:target="_blank"}__
 - Download Terraform
- __[Terraform](https://www.terraform.io/downloads.html)__
+ __[Terraform](https://www.terraform.io/downloads.html){:target="_blank"}__
 
 As a consistent naming convention we are going to call:
 

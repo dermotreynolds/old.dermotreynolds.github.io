@@ -29,7 +29,7 @@ This uses the release that created during *Create Visual Studio Team Services au
 
 - Add an artefact to the pipeline.
 
- _This is where it picks up the build created earler._
+ _This is where it picks up the build created earlier._
 
 ![](/images/Setup-VSTS-Release-04.png)
 
@@ -62,7 +62,7 @@ This uses the release that created during *Create Visual Studio Team Services au
 
 ![](/images/Setup-VSTS-Release-12.png)
 
-- Return to your release pipeline and select the new service endpoint and App Service
+- Return to your release pipeline and select the new service endpoint and App Service.
 
 ![](/images/Setup-VSTS-Release-13.png)
 

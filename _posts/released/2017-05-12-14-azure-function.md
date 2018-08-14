@@ -11,7 +11,7 @@ As per the documentation:
 
 *Azure Functions is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure.*
 
-As mentioned, it allows you to develop small single purpose functions in virtually any language and for each to be triggered in a variety of different ways and that can be scaled independently of one another.  For example, you may have a place order function which listens on a queue and when a message appears to perform the PlaceOrder action.
+As mentioned, it allows you to develop small single purpose functions in virtually any language and for each to be triggered in a variety of different ways that can be scaled independently of one another.  For example, you may have a place order function which listens on a queue and when a message appears to perform the PlaceOrder action.
 
 Under the hood a function is an App Service.  One of the advantages of functions is that you can pay on a pure consumption model, therefore there is no need to keep multiple servers running during quiet periods.
 

@@ -17,7 +17,7 @@ It does make sense to have services logically isolated from one another where th
 
 In the scenario below we have a centralised Key Vault which stores our secrets.  This is analagous to having a central Active Directory.  However, there are 2 things:
 
-1. We have 2 provisioning scripts that have their own independent state view of the Key Valult resource.
+1. We have 2 provisioning scripts that have their own independent state view of the Key Vault resource.
 2. Key Vault is negligible in cost and is irrelevant in cost relative to an Active Directory deployment.
 
 ![](/images/WeFinance-POC-02-wont-work.png)

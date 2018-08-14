@@ -6,12 +6,12 @@ category: security
 tags: [Azure, Security, Visual Studio Team Services, Service Principal, v1]
 
 ---
-In order for a project within VSTS to perform actions on an Azure Subscription we need to create a Service endpoint which in turn sets up a Service Principal.
+In order for a project within Visual Studio Team Services to perform actions on an Azure Subscription we need to create a Service endpoint which in turn sets up a Service Principal.
 
 There are 3 terms in play here which you should be aware of:
 
 1. **A Service Endpoint.**  This is the configuration within VSTS which points to your Service Principal.  It is also know as a Service connection.
-2. **An Application Registration.**  This is the configuration within Azure which is creates an identity which can be given permissions.
+2. **An Application Registration.**  This is the configuration within Azure which creates an identity which in turn can be given permissions.
 3. **A Service Principal.**  This is what the identity created by the Application Registration is known as.
 
 In summary, to set this up we have 2 areas which hold configuration.
@@ -24,7 +24,7 @@ This approach enables us to:
 
 - Assign permissions to the app identity that are different than your own permissions. Typically, these permissions are restricted to exactly what the app needs to do.
 
-- Use a certificate for authentication when executing an unattended script.*
+- Use a certificate for authentication when executing an unattended script.
 
 In summary, a Service Principal is an "Account" which you assign certain access to.  In our case we can give this Service Principal access to the Resource Group that will hold our resources.
 
@@ -41,7 +41,7 @@ You will notice that it has a very ugly auto-generated name.  My recommendation 
 
 I am renaming mine to VisualStudio-Service-Principal.
 
-If you go to the Resource Group that you created you will find this Service Principal under Access control(IAM)
+If you go to the Resource Group that you created you will find this Service Principal under Access control (IAM)
 
 ![](/images/Add-Service-Principal-02.png)
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Terraform deployment via command line."
+title: "Terraform deployment via command line"
 date: 2017-05-01
 category: terraform
 tags: [Azure, Terraform, CI/CD, v1]
@@ -8,14 +8,13 @@ tags: [Azure, Terraform, CI/CD, v1]
 ---
 The GUI should only be used for those functions that are not available via command line means.
 
-
 There are a number of issues with using the GUI and ad-hoc commands:
 
 1. There is no documented state of the infrastructure.
 
 2. There is no repeatability.  Most organisations have multiple environments which are identical to one another apart from scale.  Maintaining this through manual means is difficult.
 
-Infrastructure As Code(IaC) is a means by which the intended state of an infrastructure can be codified.  This give us our documentation.  It can be used to deployed to multiple environments and committed to source control, giving us repeatability and audit.
+Infrastructure As Code (IaC) is a means by which the intended state of an infrastructure can be codified.  This give us our documentation.  It can be used to deployed to multiple environments and committed to source control, giving us repeatability and audit.
 
 The purpose of this article is to walk you through a very simple terraform deployment via the command line and then use the same script in a subsequent automated deployment via Visual Studio Team Services.
 

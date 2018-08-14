@@ -12,12 +12,13 @@ When you sign up for Visual Studio Team Services you are allocated a given amoun
 
 This article walks you through creating a dedicated build agent.
 
-- Select Windows based Build Agent for VSTS from the Azure Marketplace
+- Select Windows based Build Agent for VSTS from the Azure Marketplace.
+
 ![](/images/New-Windows-Build-Agent-01-01.png)
 
 *I wont walk through creating a VM.  But the significant screen is below.*
 
-- Get hold of your _[Personal Access Token](https://docs.microsoft.com/en-us/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)_
+- Get hold of your _[Personal Access Token](https://docs.microsoft.com/en-us/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)_.
 
 - Which you can then put into the VSTS Settings.
 
@@ -51,11 +52,11 @@ Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK 
 
 ![](/images/New-Windows-Build-Agent-04.png)
 
-- We can now return to our build definition and select this agent pool
+- We can now return to our build definition and select this agent pool.
 
 ![](/images/New-Windows-Build-Agent-05.png)
 
-- But it fails
+- But it fails.
 
       ## Error 1
       No agent found in pool Azure-Hosted-Agents which satisfies the specified demands:
@@ -72,4 +73,4 @@ To resolve this install Visual Studio Community on the host.
 
 ![](/images/New-Windows-Build-Agent-07.png)
 
-- Rerun the build against the new agent
+- Rerun the build against the new agent.

@@ -58,7 +58,7 @@ resource "azurerm_function_app" "wfbill_function_app" {
 }
 ```
 
-We can then use the service principle to create a policy against keyvault:
+We can then use the service principle to create a policy against Key Vault:
 ``` javascript
 
 resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
@@ -73,4 +73,4 @@ resource "azurerm_key_vault_access_policy" "wfbill_app_policy" {
 }
 ```
 
-Your app service can now access key vault.
+Your app service can now access Key Vault.
