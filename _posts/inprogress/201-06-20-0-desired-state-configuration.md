@@ -3,7 +3,7 @@ layout: post
 title: "Desired State Configuration"
 date: 2018-06-20
 featured: true
-category: powershell
+category: DSC
 tags: [Azure, Desired State Configuration, v1]
 
 ---
