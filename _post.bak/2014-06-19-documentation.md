@@ -107,7 +107,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
 future:      true
-pygments:    true
+pygments:    
 markdown:    kramdown
 paginate:    6
 paginate_path: "page:num"
