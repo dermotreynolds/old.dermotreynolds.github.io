@@ -19,4 +19,5 @@ If you want to expose services to the internet with the same level of isolation 
 
 The reference architectures for Azure and AWS are located here:
 Azure Architecture Center __[here](https://docs.microsoft.com/en-us/azure/architecture/){:target="_blank"}__.
+
 AWS Cloudformation Examples __[here](https://aws-quickstart.github.io/templates-examples.html){:target="_blank"}__.
