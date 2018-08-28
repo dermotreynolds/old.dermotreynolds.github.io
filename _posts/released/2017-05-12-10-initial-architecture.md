@@ -3,7 +3,7 @@ layout: post
 title: "Terraform/ARM Architecture Dos & Don'ts"
 description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
 modified: 2013-05-31
-category: architecture
+category: Architecture
 tags: [Azure, Key Vault, Architecture, CI/CD, v1]
 comments: false
 share: true
