@@ -46,3 +46,18 @@ App Service Runtime Versions __[here](https://docs.microsoft.com/en-us/azure/app
 
 MySQL Versions __[here](https://docs.microsoft.com/en-us/azure/mysql/concepts-supported-versions){:target="_blank"}__.
 
+At this point you will need to address the architectural issue with the above where you have a database residing on an app server.
+
+Other considerations are:
+
+1. Is there a simplification agenda i.e. reducing the number of disparate technologies being used?  If this is the case then you may be moving to a single database technology.
+
+2. What is the capacity requirements of the above elements?  All services on Azure have __[limits](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits){:target="_blank"}__.
+
+3. Are any of the above components using specific extensions not supported on Azure.  For example PostgreSQL supports __[extension](https://docs.microsoft.com/en-us/azure/postgresql/concepts-extensions){:target="_blank"}__.
+
+4. Is there a consolidation opportunity to collapse the 2 databases into one?
+
+5. Does the the target services support the operational aspects i.e. backup & recovery, security and monitoring.  All Azure services are developing rapidly and features that exist for one may not exist for another.
+
+6. What __[parameters](https://docs.microsoft.com/en-us/azure/postgresql/howto-configure-server-parameters-using-cli){:target="_blank"}__ need to be set on the target for the application to function.  
