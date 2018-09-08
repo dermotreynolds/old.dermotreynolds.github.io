@@ -10,7 +10,6 @@ tags: [Azure, Architecture, v1]
 Before you start migrating an application to Azure or AWS you need to know its current and future state.
 
 A great tool for discovering your application estate is __[BMC Discovery](http://www.bmc.com/it-solutions/discovery-dependency-mapping.html){:target="_blank"}__.
-.
 
 Below is an example of an environment which I created in a lab consisting of a couple of servers with various different components installed.
 
