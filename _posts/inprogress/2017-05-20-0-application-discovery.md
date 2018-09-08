@@ -15,7 +15,7 @@ Below is an example of an environment which I created in a lab consisting of a c
 
 BMC Discovery will "discover" the connections between elements i.e. if an Application Server connects to a DB Server.  It uses this information to generate these visual representations.
 
-Once you have scanned your environment you can see these by selecting
+Once you have scanned your environment you can see these by going to the menu and selecting
 
 *Explore / Data / Candidate Software Instance List*
 
