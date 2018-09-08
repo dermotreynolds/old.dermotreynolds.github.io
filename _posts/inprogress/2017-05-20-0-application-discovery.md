@@ -7,23 +7,23 @@ category: Migration
 tags: [Azure, Architecture, v1]
 
 ---
-Before you start migrating to Azure or AWS you need to know what its current and future state is.
+Before you start migrating to Azure or AWS you need to know the current and future state for your application.
 
-A great tool for discovering your application estate is BMC Discovery - which used to be called ADDM.
+A great tool for discovering your application estate is BMC Discovery.
 
 Below is an example of an environment which I created in a lab consisting of a couple of servers with various different components installed.
 
-BMC Discovery will "discover" the connectivity between elements i.e. if an Application Server connects to a DB Server.  It uses this information to generate these visual representations.
+BMC Discovery will "discover" the connections between elements i.e. if an Application Server connects to a DB Server.  It uses this information to generate these visual representations.
 
 Once you have scanned your environment you can see these by selecting
 
-Explore / Data / Candidate Software Instance List
+**Explore / Data / Candidate Software Instance List**
 
 ![](/images/BMC-Discover-Application-01.png)
 
-In my case I have published the application and given the service classification - C3 - and an indication of the data classification - S3 - where both of these classifications indicate the availability and security requirements.
+In my case I have published the application and used the service classification - C3 - and an indication of the data classification - S3 - in the name.  These will be used to determine the target architecture and associated security posture.
 
-You can then drill into the application versions by selecting Sofware Dependencies from one of the associated reports:
+You can then drill into the application versions by selecting Software Dependencies from the list of reports:
 
 ![](/images/BMC-Discover-Application-01.1.png)
 
@@ -31,7 +31,7 @@ You now have a list of the versions of the various application components
 
 ![](/images/BMC-Discover-Application-02.png)
 
-Assuming that this classification allows you to use PaaS you can perform an interoperability check with Azure.
+Assuming that you can use PaaS for this service you can perform an interoperability check with relevant Azure services.
 i.e. 
 
 - Check the version of PostgreSQL supported on Azure
@@ -46,9 +46,9 @@ App Service Runtime Versions __[here](https://docs.microsoft.com/en-us/azure/app
 
 MySQL Versions __[here](https://docs.microsoft.com/en-us/azure/mysql/concepts-supported-versions){:target="_blank"}__.
 
-At this point you will need to address the architectural issue with the above where you have a database residing on an app server.
+If you have architectures like the one above you should - i.e. where you have 2 different roles on the same server(s) - then you should aim to split them out.
 
-Other considerations are:
+Some other considerations are:
 
 1. Is there a simplification agenda i.e. reducing the number of disparate technologies being used?  If this is the case then you may be moving to a single database technology.
 
