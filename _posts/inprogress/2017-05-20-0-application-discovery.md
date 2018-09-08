@@ -42,4 +42,7 @@ PostgreSQL Versions __[here](https://docs.microsoft.com/en-us/azure/postgresql/c
 
 App Service Runtime Versions __[here](https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro){:target="_blank"}__.
 
-- Check the version of app service components supported:
+- Check the version of MySQL supported:
+
+MySQL Versions __[here](https://docs.microsoft.com/en-us/azure/mysql/concepts-supported-versions){:target="_blank"}__.
+
