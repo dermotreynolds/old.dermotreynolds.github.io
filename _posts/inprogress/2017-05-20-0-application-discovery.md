@@ -30,3 +30,16 @@ You can then drill into the application versions by selecting Sofware Dependenci
 You now have a list of the versions of the various application components
 
 ![](/images/BMC-Discover-Application-02.png)
+
+Assuming that this classification allows you to use PaaS you can perform an interoperability check with Azure.
+i.e. 
+
+- Check the version of PostgreSQL supported on Azure
+
+PostgreSQL Versions __[here](https://docs.microsoft.com/en-us/azure/postgresql/concepts-supported-versions){:target="_blank"}__.
+
+- Check the version of app service components supported:
+
+App Service Runtime Versions __[here](https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro){:target="_blank"}__.
+
+- Check the version of app service components supported:
