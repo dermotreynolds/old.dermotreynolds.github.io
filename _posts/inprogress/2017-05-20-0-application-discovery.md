@@ -61,3 +61,5 @@ Other considerations are:
 5. Does the the target services support the operational aspects i.e. backup & recovery, security and monitoring.  All Azure services are developing rapidly and features that exist for one may not exist for another.
 
 6. What __[parameters](https://docs.microsoft.com/en-us/azure/postgresql/howto-configure-server-parameters-using-cli){:target="_blank"}__ need to be set on the target for the application to function.  
+
+7. Probably the most important of all, you should determine what the TCO of the solution is.  This allows you to determine if the solution is within the budget but also to determine if you have chosen the best combination for the use-case.  For example, it may be that to support a specific number of concurrent users a different technology is lower cost.  Whilst this may not align with the strategic direction it is worth while sharing your observations with your peers to asses whether you are on the right path.  
