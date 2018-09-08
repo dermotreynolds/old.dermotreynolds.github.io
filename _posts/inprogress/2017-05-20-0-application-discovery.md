@@ -30,8 +30,3 @@ You can then drill into the application versions by selecting Sofware Dependenci
 You now have a list of the versions of the various application components
 
 ![](/images/BMC-Discover-Application-02.png)
-
-If, for example you wanted to isolate your cloud deployment from your On-Prem services you may want to implement the following pattern:
-
-![](/images/Reference-Architecture-Azure-Dmz-Private.png)
-
