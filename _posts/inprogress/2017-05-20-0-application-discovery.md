@@ -7,7 +7,7 @@ category: Migration
 tags: [Azure, Architecture, v1]
 
 ---
-Before you start migrating to Azure or AWS you need to know the current and future state for your application.
+Before you start migrating an application to Azure or AWS you need to know its current and future state.
 
 A great tool for discovering your application estate is BMC Discovery.
 
