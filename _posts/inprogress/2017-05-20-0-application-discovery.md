@@ -17,7 +17,7 @@ BMC Discovery will "discover" the connections between elements i.e. if an Applic
 
 Once you have scanned your environment you can see these by selecting
 
-###### Explore / Data / Candidate Software Instance List
+*Explore / Data / Candidate Software Instance List*
 
 ![](/images/BMC-Discover-Application-01.png)
 
