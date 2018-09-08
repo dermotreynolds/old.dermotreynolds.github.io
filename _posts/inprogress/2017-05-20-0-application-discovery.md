@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Detailed Migration Planning"
-date: 2017-05-20
+date: 2018-09-08
 featured: true
 category: Migration
 tags: [Azure, Architecture, v1]
