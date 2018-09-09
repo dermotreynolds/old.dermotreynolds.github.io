@@ -33,3 +33,5 @@ Other examples include:
 - Azure Active Directory Domain Services
 - Azure Batch
 - Cloud services: Virtual network (classic) only
+
+More info __[here](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-for-azure-services){:target="_blank"}__.
