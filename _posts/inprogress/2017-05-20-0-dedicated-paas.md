@@ -11,7 +11,7 @@ Not all Azure PaaS Services are wide open to the internet!
 
 A common issue with Azure PaaS services from a security perspective is that they are internet attached by default.  Whilst this may be ok for serving data which is "public domain" it is not ideal for sensitive data.
 
-There are 2 services which have more secure alternatives - App Services & SQL.  The variations of these can be deployed into a private vNet with no internet access if you so wish.
+Two services which have more secure alternatives - App Services & SQL.  The variations of these can be deployed into a private vNet with no internet access if you so wish.
 
 Some have a variation on the standard names and the specifications are given here:
 
