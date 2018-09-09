@@ -13,7 +13,7 @@ A common issue with Azure PaaS services from a security perspective is that they
 
 There are 2 services which have more secure alternatives - App Services & SQL.  The variations of these can be deployed into a private vNet with no internet access if you so wish.
 
-They have a variation on the standard names and the specifications are given here:
+Some have a variation on the standard names and the specifications are given here:
 
 Azure SQL Database Managed Instance __[here](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance){:target="_blank"}__.
 
