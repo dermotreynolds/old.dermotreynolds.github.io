@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Architecture Patterns"
-date: 2016-09-19
+date: 2018-09-19
 featured: true
 category: Architecture
 tags: [Azure, Architecture, Security, v1]
