@@ -22,12 +22,19 @@ There are a standard set of security controls within Azure which are enabled by 
 
 ![](/images/APP-SQL-PAAS.png)
 
+###### 1.2 PaaS App Service & Private PaaS SQL Architecture:
+
 ![](/images/APP-PAAS-SQL-PPAAS.png)
+
+###### 1.3 Private PaaS App Service & Private PaaS SQL Architecture:
 
 ![](/images/APP-PPAAS-SQL-PPAAS.png)
 
+###### 1.4 Private PaaS App Service & IaaS SQL Architecture:
 
 ![](/images/APP-PPAAS-SQL-IAAS.png)
+
+###### 1.5 IaaS "App Service" & IaaS SQL Architecture:
 
 ![](/images/APP-IAAS-SQL-IAAS.png)
 
@@ -36,16 +43,23 @@ There are a standard set of security controls within Azure which are enabled by 
 
 ##### Background:
 
+###### 2.1 Standard SQL Redundancy:
+
 ![](/images/SQL-NON-REDUNDANT.png)
+
+###### 2.2 In-Zone SQL Redundancy:
 
 ![](/images/SQL-IN-ZONE-REDUNDANT.png)
 
+###### 2.3 Intra-Zone SQL Redundancy:
 
 ![](/images/SQL-ZONE-REDUNDANT.png)
 
+###### 2.4 Intra-Region SQL Redundancy:
 
 ![](/images/SQL-REGION-REDUNDANT.png)
 
+###### 2.5 "Full" SQL Redundancy:
 
 ![](/images/SQL-FULL-REDUNDANT.png)
 
