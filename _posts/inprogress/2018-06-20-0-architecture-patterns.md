@@ -7,6 +7,8 @@ category: Architecture
 tags: [Azure, Architecture, v1]
 
 ---
+This is work in progress.
+
 You can architect solutions in Azure in a variety of different ways that align to security or availability requirements.
 
 Here we explore the different architectures which can can be implemented.
@@ -20,6 +22,7 @@ There are a standard set of security controls within Azure which are enabled by 
 
 ###### 1.1 Standard PaaS Architecture:
 
+Below is a typical PaaS architecture.  
 ![](/images/APP-SQL-PAAS.png)
 
 ###### 1.2 PaaS App Service & Private PaaS SQL Architecture:
