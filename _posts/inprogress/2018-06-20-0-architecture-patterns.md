@@ -3,7 +3,7 @@ layout: post
 title: "Architecture Patterns"
 date: 2016-08-20
 featured: false
-category: WorkInProgress
+category: Architecture
 tags: [Azure, Architecture, v1]
 
 ---
