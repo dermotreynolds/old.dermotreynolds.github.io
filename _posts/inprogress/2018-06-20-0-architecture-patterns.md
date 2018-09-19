@@ -2,8 +2,8 @@
 layout: post
 title: "Architecture Patterns"
 date: 2016-08-20
-featured: true
-category: Architecture
+featured: false
+category: WorkInProgress
 tags: [Azure, Architecture, v1]
 
 ---
