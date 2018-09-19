@@ -39,6 +39,9 @@ Below is a typical PaaS architecture.
 
 ![](/images/APP-IAAS-SQL-IAAS.png)
 
+###### 1.5 Private PaaS App Service & PaaS SQL Service Endpoint Architecture:
+
+![](/images/APP-PPAAS-SQL-PPAAS-SEP.png)
 
 ### 2. Redundancy
 
