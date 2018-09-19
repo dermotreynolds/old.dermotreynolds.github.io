@@ -7,8 +7,6 @@ category: WorkInProgress
 tags: [Azure, Architecture, v1]
 
 ---
-This is work in progress.
-
 You can architect solutions in Azure in a variety of different ways that align to security or availability requirements.
 
 Here we explore the different architectures which can can be implemented.
