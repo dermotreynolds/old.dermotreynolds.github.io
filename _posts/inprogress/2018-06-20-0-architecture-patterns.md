@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Desired State Configuration"
+title: "Architecture Patterns"
 date: 2016-08-20
 featured: true
 category: Architecture
