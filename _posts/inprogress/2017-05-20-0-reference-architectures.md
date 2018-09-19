@@ -11,7 +11,7 @@ Both Azure and AWS has a wealth of "patterns" which can be reused in your archit
 
 If, for example you wanted to isolate your cloud deployment from your On-Prem services you may want to implement the following pattern:
 
-![](/images/Reference-Architecture-Azure-Dmz-Private.png)
+ç
 
 If you want to expose services to the internet with the same level of isolation you may want to implement the following:
 
